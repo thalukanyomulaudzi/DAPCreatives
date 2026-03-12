@@ -23,6 +23,8 @@
     <link rel="icon" type="image/png" href="assets/images/logo.png" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- ===== LOADER ===== -->
     <div class="loader">
       <img
@@ -46,10 +48,10 @@
         />
       </a>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
+        <li><a href="index.html" class="nav-active">Home</a></li>
+        <li><a href="competencies.html">Core Competencies</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work</a></li>
         <li><a href="#contact" class="nav-cta">Contact Us</a></li>
       </ul>
       <div class="hamburger" aria-label="Toggle menu">
@@ -59,12 +61,15 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-      <a href="#home">Home</a>
+      <a href="index.html">Home</a>
+      <a href="competencies.html">Core Competencies</a>
+      <a href="portfolio.html">Portfolio</a>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
       <a href="#contact">Contact Us</a>
     </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="main-content">
 
     <!-- ===== HERO ===== -->
     <section id="home">
@@ -122,7 +127,7 @@
         <div class="who-strip-text reveal">
           <p class="section-eyebrow">Who We Are</p>
           <h2 class="section-title">
-            An Organized Team<br /><span class="highlight">Of Creativity</span>
+            Where Art Meets<br /><span class="highlight">Architecture</span>
           </h2>
           <p class="section-desc">
             At DAP Creatives, architecture is approached as both an art and a
@@ -167,8 +172,8 @@
           />
           <div class="about-image-accent"></div>
           <div class="about-image-badge">
-            <strong>3+</strong>
-            <span>Years of Excellence</span>
+            <strong>15+</strong>
+            <span>Years of Experience</span>
           </div>
         </div>
 
@@ -283,6 +288,23 @@
               and design.
             </p>
           </div>
+          <div class="service-card reveal">
+            <span class="service-num">05</span>
+            <div class="service-icon"><i class="bx bx-home-heart"></i></div>
+            <h3 class="service-name">Interior Design</h3>
+            <p class="service-text">
+              Crafting interiors that are as functional as they are beautiful.
+              From spatial planning and material selection to bespoke furniture
+              and lighting, we curate environments that reflect your lifestyle
+              and elevate everyday living.
+            </p>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:3rem;">
+          <a href="competencies.html" class="btn-primary">
+            <i class="bx bx-right-arrow-alt"></i>
+            Explore All Competencies
+          </a>
         </div>
       </div>
     </div>
@@ -491,11 +513,15 @@
         </div>
       </div>
 
-      <div class="work-more reveal">
+      <div class="work-more reveal" style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
         <button class="btn-secondary dark" id="seeMoreBtn">
           <i class="bx bx-grid-alt"></i>
           See More Work
         </button>
+        <a href="portfolio.html" class="btn-primary">
+          <i class="bx bx-right-arrow-alt"></i>
+          View Full Portfolio
+        </a>
       </div>
     </section>
 
@@ -666,6 +692,7 @@
                 <option value="architecture">Architecture</option>
                 <option value="construction">Building Construction</option>
                 <option value="gis">G.I.S</option>
+                <option value="interior-design">Interior Design</option>
                 <option value="other">Other</option>
               </select>
             </div>
@@ -691,6 +718,8 @@
       </div>
     </section>
 
+    </main>
+
     <!-- ===== FOOTER ===== -->
     <footer>
       <img
@@ -699,7 +728,7 @@
         class="footer-logo"
       />
       <p class="footer-copy">
-        &copy; 2025 DAP Creatives — All rights reserved |
+        &copy; 2026 DAP Creatives — All rights reserved |
         <a href="mailto:info@dapcreatives.co.za">info@dapcreatives.co.za</a>
       </p>
       <div class="social-links" style="margin: 0">
