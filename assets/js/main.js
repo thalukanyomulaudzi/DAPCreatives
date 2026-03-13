@@ -119,9 +119,9 @@ function applyFilter(filter) {
   allCards.forEach(card => {
     const isExtra = card.classList.contains('work-extra');
     const matchesFilter = filter === 'all' || card.dataset.category === filter;
-    // Extra cards only visible if already revealed AND match filter
     const revealed = card.dataset.revealed === 'true';
-    const show = matchesFilter && (!isExtra || revealed);
+    // On a specific category tab show all matching cards; on "all" restrict extras until revealed
+    const show = matchesFilter && (filter !== 'all' || !isExtra || revealed);
     card.style.display = show ? '' : 'none';
   });
 }
@@ -227,20 +227,49 @@ document.addEventListener('keydown', e => {
 document.querySelector('.modal-enquire')?.addEventListener('click', closeModal);
 
 // ===== CONTACT FORM =====
-const form = document.querySelector('.contact-form form');
+const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Message Sent!';
-    btn.style.background = '#1a7f37';
-    btn.style.clipPath = 'none';
-    setTimeout(() => {
-      btn.textContent = 'Send Message';
-      btn.style.background = '';
-      btn.style.clipPath = '';
-      form.reset();
-    }, 3000);
+    const originalHTML = btn.innerHTML;
+
+    btn.disabled = true;
+    btn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Sending...';
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        btn.innerHTML = '<i class="bx bx-check"></i> Message Sent!';
+        btn.style.background = '#1a7f37';
+        btn.style.clipPath = 'none';
+        form.reset();
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.style.background = '';
+          btn.style.clipPath = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch (err) {
+      btn.innerHTML = '<i class="bx bx-error"></i> Failed — Try Again';
+      btn.style.background = '#b00020';
+      btn.style.clipPath = 'none';
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.style.clipPath = '';
+        btn.disabled = false;
+      }, 4000);
+    }
   });
 }
 

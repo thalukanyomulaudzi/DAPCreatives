@@ -819,6 +819,7 @@ section {
   display:grid; grid-template-columns:1fr 1fr;
   gap:4rem; margin-top:5rem;
 }
+.map-embed { margin-top:4rem; }
 .contact-info h3 {
   font-family:var(--font-h);
   font-size:1.45rem; font-weight:700;
@@ -1695,6 +1696,66 @@ footer .social-link:hover {
 }
 .lb-thumb:hover { opacity:.7; }
 .lb-thumb.active { opacity:1; border-color:var(--red); }
+
+/* ===================================================
+   VISION TO REALITY
+   =================================================== */
+.vision-reality {
+  padding: 6rem 2rem;
+  background: var(--dark);
+}
+.vision-reality .section-header {
+  margin-bottom: 3rem;
+}
+.vr-grid {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.vr-item {
+  flex: 1;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.vr-item img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+.vr-item:hover img { transform: scale(1.03); }
+.vr-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,.75));
+  color: #fff;
+  padding: 1.2rem 1rem .8rem;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.vr-label i { font-size: 1.1rem; color: var(--red); }
+.vr-arrow {
+  font-size: 3rem;
+  color: var(--red);
+  flex-shrink: 0;
+  opacity: .8;
+}
+@media (max-width: 768px) {
+  .vr-grid { flex-direction: column; }
+  .vr-arrow { transform: rotate(90deg); }
+  .vr-item img { height: 260px; }
+}
 
 /* ===================================================
    GALLERY RESPONSIVE
