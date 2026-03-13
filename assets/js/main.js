@@ -24,6 +24,25 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 80);
 });
 
+// ===== SCROLLSPY — NAV ACTIVE STATE =====
+const navSectionLinks = document.querySelectorAll('.nav-links a[data-section]');
+if (navSectionLinks.length) {
+  const sectionIds = [...navSectionLinks].map(a => a.dataset.section);
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navSectionLinks.forEach(a => a.classList.remove('nav-active'));
+        const active = document.querySelector(`.nav-links a[data-section="${entry.target.id}"]`);
+        if (active) active.classList.add('nav-active');
+      }
+    });
+  }, { threshold: 0.35 });
+
+  sections.forEach(s => spyObserver.observe(s));
+}
+
 // ===== HAMBURGER MENU =====
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
