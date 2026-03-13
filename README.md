@@ -15,3 +15,11 @@ In `index.html`, find this line and replace `YOUR_WEB3FORMS_ACCESS_KEY` with the
 ```
 
 Once that's done, every submission will land in `director@dapcreatives.co.za` with the sender's name, email, service, and message. The button also shows a spinner while sending, a green tick on success, and a red error state if it fails.
+
+## SEO Next Steps
+
+Create `og-image.jpg` (1200×630px) — crop the Villa Nandoni hero image, save as `assets/images/og-image.jpg`, and push it.
+
+Google Search Console — go to [search.google.com/search-console](https://search.google.com/search-console), add `https://www.dapcreatives.co.za/` as a property, and submit the sitemap URL.
+
+Validate — test at [search.google.com/test/rich-results](https://search.google.com/test/rich-results) to confirm the schema is correct.

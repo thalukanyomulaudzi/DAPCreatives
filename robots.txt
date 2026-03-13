@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thalukanyomulaudzi.github.io/DAPCreatives/sitemap.xml
+Sitemap: https://www.dapcreatives.co.za/sitemap.xml
