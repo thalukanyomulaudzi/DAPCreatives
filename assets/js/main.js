@@ -38,7 +38,7 @@ if (navSectionLinks.length) {
         if (active) active.classList.add('nav-active');
       }
     });
-  }, { threshold: 0.35 });
+  }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
 
   sections.forEach(s => spyObserver.observe(s));
 }
