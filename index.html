@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>if(location.protocol==='http:')location.replace('https:'+location.href.substring(5));</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DAP Creatives | Architecture, Town Planning &amp; Interior Design — Pretoria</title>
     <meta name="description" content="DAP Creatives is a Pretoria-based architecture firm offering Town Planning, Architecture, Building Construction, GIS and Interior Design. 120+ projects. 7+ years experience." />
@@ -38,6 +39,45 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "DAP Creatives",
+      "alternateName": "DAP Creatives Architecture & Town Planning",
+      "url": "https://dapcreatives.co.za",
+      "logo": "https://dapcreatives.co.za/assets/images/logo.png",
+      "image": "https://dapcreatives.co.za/assets/images/og-image.jpg",
+      "description": "DAP Creatives is a Pretoria-based architecture and town planning firm offering Architecture, Town Planning, Building Construction, GIS and Interior Design. 120+ projects. 7+ years experience.",
+      "email": "director@dapcreatives.co.za",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pretoria",
+        "addressRegion": "Gauteng",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -25.7479,
+        "longitude": 28.2293
+      },
+      "areaServed": ["Pretoria", "Limpopo", "Gauteng", "South Africa"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Architecture" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Town Planning" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Building Construction" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Geographic Information Systems (GIS)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior Design" } }
+        ]
+      },
+      "sameAs": []
+    }
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
